@@ -401,6 +401,15 @@
       "author": "Chronulus AI",
       "repository": "https://github.com/ChronulusAI/chronulus-mcp"
     },
+    "mcpunk": {
+      "name": "mcpunk",
+      "package_name": "mcpunk",
+      "command": "uvx",
+      "args": ["mcpunk"],
+      "description": "Chat with your codebase without embeddings by giving the LLM tools to search your code intelligently.",
+      "author": "jurasofish",
+      "repository": "https://github.com/jurasofish/mcpunk"
+    },
     "e2b": {
       "name": "e2b",
       "package_name": "e2b-server",
