@@ -1,0 +1,735 @@
+{
+  "version": "1.0",
+  "last_updated": "2024-03-20T00:00:00",
+  "servers": {
+    "aws-kb-retrieval": {
+      "name": "AWS Knowledge Base Retrieval",
+      "package_name": "@modelcontextprotocol/server-aws-kb",
+      "command": "npx",
+      "args":  [
+        "-y",
+        "@modelcontextprotocol/server-aws-kb-retrieval"
+      ],
+      "env": {
+        "AWS_ACCESS_KEY_ID": "Your AWS Access Key ID for authentication",
+        "AWS_SECRET_ACCESS_KEY": "Your AWS Secret Access Key for authentication",
+        "AWS_REGION": "The AWS region where your Bedrock resources are located (e.g., us-east-1)"
+      },
+      "description": "Retrieval from AWS Knowledge Base using Bedrock Agent Runtime",
+      "author": "ModelContextProtocol",
+      "repository": "https://github.com/modelcontextprotocol/servers/tree/main/src/aws-kb-retrieval-server"
+    },
+    "brave-search": {
+      "name": "brave-search",
+      "package_name": "@modelcontextprotocol/server-brave-search",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-brave-search"
+      ],
+      "env": {
+        "BRAVE_API_KEY": "YOUR_API_KEY_HERE"
+      },
+      "description": "Web and local search using Brave's Search API",
+      "author": "ModelContextProtocol",
+      "repository": "https://github.com/modelcontextprotocol/servers/tree/main/src/brave-search"
+    },
+    "everart": {
+      "name": "everart",
+      "package_name": "@modelcontextprotocol/server-everart",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-everart"],
+      "env": {
+        "EVERART_API_KEY": "your_key_here"
+      },
+      "description": "AI image generation using various models",
+      "author": "ModelContextProtocol",
+      "repository": "https://github.com/modelcontextprotocol/servers/tree/main/src/everart"
+    },
+    "everything": {
+      "name": "everything",
+      "package_name": "@modelcontextprotocol/server-everything",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-everything"
+      ],
+      "description": "Reference / test server with prompts, resources, and tools",
+      "author": "ModelContextProtocol",
+      "repository": "https://github.com/modelcontextprotocol/servers/tree/main/src/everything"
+    },
+    "fetch": {
+      "name": "fetch",
+      "package_name": "@modelcontextprotocol/server-fetch",
+      "command": "uvx",
+      "args": ["mcp-server-fetch"],
+      "description": "Web content fetching and conversion for efficient LLM usage",
+      "author": "ModelContextProtocol",
+      "repository": "https://github.com/modelcontextprotocol/servers/tree/main/src/fetch"
+    },
+    "filesystem": {
+      "name": "filesystem",
+      "description": "Provides an API for filesystem operations, allowing Claude to read and write files.",
+      "package_name": "@modelcontextprotocol/server-filesystem",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem"],
+      "author": "Anthropic",
+      "installation_type": "npm"
+    },
+    "git": {
+      "name": "git",
+      "package_name": "mcp-server-git",
+      "command": "uvx",
+      "args": ["mcp-server-git", "--repository", "path/to/git/repo"],
+      "description": "Tools to read, search, and manipulate Git repositories",
+      "author": "ModelContextProtocol",
+      "repository": "https://github.com/modelcontextprotocol/servers/tree/main/src/git"
+    },
+    "github": {
+      "name": "github",
+      "package_name": "@modelcontextprotocol/server-github",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-github"
+      ],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "<YOUR_TOKEN>"
+      },
+      "description": "Repository management, file operations, and GitHub API integration",
+      "author": "ModelContextProtocol",
+      "repository": "https://github.com/modelcontextprotocol/servers/tree/main/src/github"
+    },
+    "gitlab": {
+      "name": "gitlab",
+      "package_name": "@modelcontextprotocol/server-gitlab",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-gitlab"
+      ],
+      "env": {
+        "GITLAB_PERSONAL_ACCESS_TOKEN": "<YOUR_TOKEN>",
+        "GITLAB_API_URL": "https://gitlab.com/api/v4" 
+      },
+      "description": "GitLab API, enabling project management",
+      "author": "ModelContextProtocol",
+      "repository": "https://github.com/modelcontextprotocol/servers/tree/main/src/gitlab"
+    },
+    "google-drive": {
+      "name": "google-drive",
+      "package_name": "@modelcontextprotocol/server-gdrive",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-gdrive"
+      ],
+      "description": "File access and search capabilities for Google Drive",
+      "author": "ModelContextProtocol",
+      "repository": "https://github.com/modelcontextprotocol/servers/tree/main/src/gdrive"
+    },
+    "google-maps": {
+      "name": "google-maps",
+      "package_name": "@modelcontextprotocol/server-google-maps",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-google-maps"
+      ],
+      "env": {
+        "GOOGLE_MAPS_API_KEY": "<YOUR_API_KEY>"
+      },
+      "description": "Location services, directions, and place details",
+      "author": "ModelContextProtocol",
+      "repository": "https://github.com/modelcontextprotocol/servers/tree/main/src/google-maps"
+    },
+    "memory": {
+      "name": "memory",
+      "description": "Implements a knowledge graph that Claude can use to store and retrieve information.",
+      "package_name": "@modelcontextprotocol/server-memory",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-memory"],
+      "author": "Anthropic",
+      "installation_type": "npm"
+    },
+    "postgres": {
+      "name": "postgres",
+      "package_name": "@modelcontextprotocol/server-postgres",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-postgres",
+        "postgresql://localhost/mydb"
+      ],
+      "description": "Read-only database access with schema inspection",
+      "author": "ModelContextProtocol",
+      "repository": "https://github.com/modelcontextprotocol/servers/tree/main/src/postgres"
+    },
+    "puppeteer": {
+      "name": "puppeteer",
+      "package_name": "@modelcontextprotocol/server-puppeteer",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-puppeteer"],
+      "description": "Browser automation and web scraping",
+      "author": "ModelContextProtocol",
+      "repository": "https://github.com/modelcontextprotocol/servers/tree/main/src/puppeteer"
+    },
+    "redis": {
+      "name": "redis",
+      "package_name": "@modelcontextprotocol/server-redis",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-redis",
+        "redis://localhost:6379"
+      ],
+      "description": "Interact with Redis key-value stores",
+      "author": "ModelContextProtocol",
+      "repository": "https://github.com/modelcontextprotocol/servers/tree/main/src/redis"
+    },
+    "sentry": {
+      "name": "sentry",
+      "package_name": "@modelcontextprotocol/server-sentry",
+      "command": "uvx",
+      "args": ["mcp-server-sentry", "--auth-token", "YOUR_SENTRY_TOKEN"],
+      "description": "Retrieving and analyzing issues from Sentry.io",
+      "author": "ModelContextProtocol",
+      "repository": "https://github.com/modelcontextprotocol/servers/tree/main/src/sentry"
+    },
+    "sequential-thinking": {
+      "name": "sequential-thinking",
+      "description": "Helps Claude solve complex problems through a structured, iterative thinking process.",
+      "package_name": "@modelcontextprotocol/server-sequential-thinking",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-sequential-thinking"],
+      "author": "Anthropic",
+      "installation_type": "npm"
+    },
+    "slack": {
+      "name": "slack",
+      "package_name": "@modelcontextprotocol/server-slack",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-slack"
+      ],
+      "env": {
+        "SLACK_BOT_TOKEN": "xoxb-your-bot-token",
+        "SLACK_TEAM_ID": "T01234567"
+      },
+      "description": "Channel management and messaging capabilities",
+      "author": "ModelContextProtocol",
+      "repository": "https://github.com/modelcontextprotocol/servers/tree/main/src/slack"
+    },
+    "sqlite": {
+      "name": "sqlite",
+      "package_name": "@modelcontextprotocol/server-sqlite",
+      "command": "uv",
+      "args": [
+      "--directory",
+      "parent_of_servers_repo/servers/src/sqlite",
+      "run",
+      "mcp-server-sqlite",
+      "--db-path",
+      "~/test.db"
+      ],
+      "description": "Database interaction and business intelligence capabilities",
+      "author": "ModelContextProtocol",
+      "repository": "https://github.com/modelcontextprotocol/servers/tree/main/src/sqlite"
+    },
+    "time": {
+      "name": "time",
+      "package_name": "@modelcontextprotocol/server-time",
+      "command": "uvx",
+      "args": ["mcp-server-time"],
+      "description": "Time and timezone conversion capabilities",
+      "author": "ModelContextProtocol",
+      "repository": "https://github.com/modelcontextprotocol/servers/tree/main/src/time"
+    },
+    "riza-server": {
+      "name": "riza-server",
+      "package_name": "@riza-io/riza-mcp",
+      "command": "npx",
+      "args": [
+        "@riza-io/riza-mcp"
+      ],
+      "env": {
+        "RIZA_API_KEY": "your-api-key"
+      },
+      "description": "Arbitrary code execution and tool-use platform for LLMs by Riza",
+      "author": "Riza",
+      "repository": "https://github.com/riza-io/riza-mcp"
+    },
+    "tavily-mcp": {
+      "name": "tavily-mcp",
+      "package_name": "tavily-mcp@0.1.4",
+      "command": "npx",
+      "args": ["-y", "tavily-mcp@0.1.4"],
+      "env": {
+        "TAVILY_API_KEY": "your-api-key-here"
+      },
+      "disabled": false,
+      "autoApprove": [],
+      "description": "Search engine for AI agents (search + extract) powered by Tavily",
+      "author": "Tavily",
+      "repository": "https://github.com/tavily-ai/tavily-mcp"
+    },
+    "neo4j": {
+      "name": "neo4j",
+      "package_name": "mcp-neo4j-cypher",
+      "command": "uvx",
+      "args": [
+      "mcp-neo4j-cypher",
+      "--db-url",
+      "bolt://localhost:{bolt-port}",
+      "--username",
+      "neo4j",
+      "--password",
+      "{your-password}"
+      ],
+      "description": "An MCP server for Neo4j",
+      "author": "Neo4j",
+      "repository": "https://github.com/neo4j-contrib/mcp-neo4j/tree/main/servers/mcp-neo4j-cypher"
+    },
+    "magic-ui": {
+      "name": "Magic UI",
+      "package_name": "@21st-dev/magic",
+      "command": "npx",
+      "args": ["-y", "@21st-dev/magic@latest", "API_KEY=\"{your-api-key}\""],
+      "description": "Create crafted UI components inspired by the best 21st.dev design engineers",
+      "author": "21st.dev",
+      "repository": "https://github.com/21st-dev/magic-mcp"
+    },
+    "mcp-compass": {
+      "name": "mcp-compass",
+      "package_name": "@liuyoshio/mcp-compass",
+      "command": "npx",
+      "args": [
+         "-y",
+         "@liuyoshio/mcp-compass"
+      ],
+      "description": "Suggest the right MCP server for your needs",
+      "author": "liuyoshio",
+      "repository": "https://github.com/liuyoshio/mcp-compass"
+    },
+    "image-gen": {
+      "name": "image-gen",
+      "package_name": "@gongrzhe/image-gen-server",
+      "command": "npx",
+      "args": ["@gongrzhe/image-gen-server"],
+      "env": {
+        "REPLICATE_API_TOKEN": "your-replicate-api-token",
+        "MODEL": "alternative-model-name"
+      },
+      "disabled": false,
+      "autoApprove": [],
+      "description": "This MCP server provides image generation capabilities using the Replicate Flux model.",
+      "author": "gongrzhe",
+      "repository": "https://github.com/GongRzhe/Image-Generation-MCP-Server"
+    },
+    "agentql": {
+      "name": "agentql",
+      "package_name": "@agentql/mcp-server",
+      "command": "npx",
+      "args": ["-y", "agentql-mcp"],
+      "env": {
+        "AGENTQL_API_KEY": "YOUR_API_KEY"
+      },
+      "description": "Enable AI agents to get structured data from unstructured web with AgentQL",
+      "author": "AgentQL",
+      "repository": "https://github.com/tinyfish-io/agentql-mcp"
+    },
+    "agentrpc": {
+      "name": "agentrpc",
+      "package_name": "@agentrpc/mcp-server",
+      "command": "npx",
+      "args": ["-y", "agentrpc", "mcp"],
+      "env": {
+        "AGENTRPC_API_SECRET": "<YOUR_API_SECRET>"
+      },
+      "description": "Connect to any function, any language, across network boundaries using AgentRPC",
+      "author": "AgentRPC",
+      "repository": "https://github.com/agentrpc/agentrpc"
+    },
+    "aiven": {
+      "name": "aiven",
+      "package_name": "@aiven/mcp-server",
+      "command": "uv",
+      "args": [
+        "--directory",
+        "$REPOSITORY_DIRECTORY",
+        "run",
+        "--with-editable",
+        "$REPOSITORY_DIRECTORY",
+        "--python",
+        "3.13",
+        "mcp-aiven"
+      ],
+      "env": {
+        "AIVEN_BASE_URL": "https://api.aiven.io",
+        "AIVEN_TOKEN": "$AIVEN_TOKEN"
+      },
+      "description": "Navigate your Aiven projects and interact with PostgreSQL®, Apache Kafka®, ClickHouse® and OpenSearch® services",
+      "version": "latest",
+      "author": "Aiven",
+      "repository": "https://github.com/Aiven-Open/mcp-aiven/tree/main/mcp_aiven"
+    },
+    "apify": {
+      "name": "apify",
+      "package_name": "@apify/actors-mcp-server",
+      "command": "npx",
+      "args": [
+      "-y", "@apify/actors-mcp-server",
+      "--actors", "lukaskrivka/google-maps-with-contact-details,apify/instagram-scraper"
+      ],
+    "env": {
+       "APIFY_TOKEN": "your-apify-token"
+    },
+      "description": "Use 3,000+ pre-built cloud tools to extract data from websites, e-commerce, social media, search engines, maps, and more",
+      "author": "Apify",
+      "repository": "https://github.com/apify/actors-mcp-server"
+    },
+    "chronulus": {
+      "name": "chronulus",
+      "package_name": "@chronulus/mcp-server",
+      "command": "uvx",
+      "args": ["chronulus-mcp"],
+      "env": {
+        "CHRONULUS_API_KEY": "<YOUR_CHRONULUS_API_KEY>"
+      },
+      "description": "Predict anything with Chronulus AI forecasting and prediction agents",
+      "author": "Chronulus AI",
+      "repository": "https://github.com/ChronulusAI/chronulus-mcp"
+    },
+    "e2b": {
+      "name": "e2b",
+      "package_name": "e2b-server",
+      "command": "npx",
+      "args": ["-y", "@e2b/mcp-server"],
+      "env": { "E2B_API_KEY": "${e2bApiKey}" },
+      "description": "A server for running code in a secure sandbox by E2B.",
+      "author": "e2b-dev",
+      "repository": "https://github.com/e2b-dev/mcp-server/tree/main/packages/js"
+    },
+    "veyrax": {
+      "name": "veyrax",
+      "package_name": "veyrax-mcp",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@smithery/cli@latest",
+        "install",
+        "@VeyraX/veyrax-mcp",
+        "--client",
+        "cursor",
+        "--config",
+        "{\"VEYRAX_API_KEY\":\"VEYRAX_API_KEY\"}"
+      ],
+      "description": "Single tool to control all 100+ API integrations, and UI components",
+      "author": "VeyraX",
+      "repository": "https://github.com/VeyraX/veyrax-mcp",
+      "installation_type": "smithery"
+    },
+    "elevenlabs": {
+      "name": "elevenlabs",
+      "package_name": "elevenlabs-mcp-server",
+      "command": "uvx",
+      "args": ["elevenlabs-mcp-server"],
+      "env": {
+        "ELEVENLABS_API_KEY": "your-api-key",
+        "ELEVENLABS_VOICE_ID": "your-voice-id",
+        "ELEVENLABS_MODEL_ID": "eleven_flash_v2",
+        "ELEVENLABS_STABILITY": "0.5",
+        "ELEVENLABS_SIMILARITY_BOOST": "0.75",
+        "ELEVENLABS_STYLE": "0.1",
+        "ELEVENLABS_OUTPUT_DIR": "output"
+      },
+      "description": "Single tool to control all 100+ API integrations, and UI components",
+      "author": "elevenlabs",
+      "repository": "https://github.com/mamertofabian/elevenlabs-mcp-server"
+    },
+    "vectorize": {
+      "name": "vectorize",
+      "package_name": "@vectorize-io/vectorize-mcp-server",
+      "command": "npx",
+      "args": ["-y", "@vectorize-io/vectorize-mcp-server"],
+      "env": {
+        "VECTORIZE_ORG_ID": "your-org-id",
+        "VECTORIZE_TOKEN": "your-token"
+      },
+      "description": "Vectorize MCP server for advanced retrieval, Private Deep Research, Anything-to-Markdown file extraction and text chunking.",
+      "author": "vectorize-io",
+      "repository": "https://github.com/vectorize-io/vectorize-mcp-server"
+    },
+    "firecrawl": {
+      "name": "firecrawl",
+      "package_name": "mcp-server-firecrawl",
+      "command": "npx",
+      "args": ["-y", "firecrawl-mcp"],
+      "env": {
+        "FIRECRAWL_API_KEY": "YOUR_API_KEY_HERE"
+      },
+      "description": "Extract web data with Firecrawl",
+      "author": "Firecrawl",
+      "repository": "https://github.com/mendableai/firecrawl-mcp-server"
+    },
+    "devhub": {
+      "name": "devhub",
+      "package_name": "devhub-cms-mcp",
+      "command": "uvx",
+      "args": [
+          "devhub-cms-mcp"
+      ],
+      "env": {
+          "DEVHUB_API_KEY": "YOUR_KEY_HERE",
+          "DEVHUB_API_SECRET": "YOUR_SECRET_HERE",
+          "DEVHUB_BASE_URL": "https://yourbrand.cloudfrontend.net"
+      },
+      "description": "Manage and utilize website content within the DevHub CMS platform",
+      "author": "DevHub",
+      "repository": "https://github.com/devhub/devhub-cms-mcp"
+    },
+    "hyperbrowser": {
+      "name": "hyperbrowser",
+      "package_name": "hyperbrowser-mcp",
+      "command": "npx",
+      "args": ["-y", "hyperbrowser-mcp"],
+      "env": {
+        "HYPERBROWSER_API_KEY": "YOUR-API-KEY"
+      },
+      "description": "Next-generation platform empowering AI agents and enabling effortless, scalable browser automation",
+      "author": "Hyperbrowsers23",
+      "repository": "https://github.com/hyperbrowserai/mcp"
+    },
+    "octagon": {
+      "name": "octagon",
+      "package_name": "@octagon/mcp-server",
+      "command": "npx",
+      "args": ["-y", "octagon-mcp"],
+      "env": {
+        "OCTAGON_API_KEY": "YOUR_API_KEY_HERE"
+      },
+      "description": "Deliver real-time investment research with extensive private and public market data",
+      "author": "Octagon",
+      "repository": "https://github.com/OctagonAI/octagon-mcp-server"
+    },
+    "search1api": {
+      "name": "search1api",
+      "package_name": "search1api-mcp",
+      "command": "npx",
+      "args": ["-y", "search1api-mcp"],
+      "env": {
+        "SEARCH1API_KEY": "YOUR_SEARCH1API_KEY"
+      },
+      "description": "One API for Search, Crawling, and Sitemaps",
+      "author": "SuperAgents",
+      "repository": "https://github.com/fatwang2/search1api-mcp"
+    },
+    "dart": {
+      "name": "dart",
+      "package_name": "dart-mcp-server",
+      "command": "npx",
+      "args": ["-y", "dart-mcp-server"],
+      "env": {
+        "DART_TOKEN": "dsa_..."
+      },
+      "description": "Interact with task, doc, and project data in an AI-native project management tool",
+      "author": "Dart",
+      "repository": "https://github.com/its-dart/dart-mcp-server"
+    },
+    "make": {
+      "name": "make",
+      "package_name": "@makehq/mcp-server",
+      "command": "npx",
+      "args": ["-y", "@makehq/mcp-server"],
+      "env": {
+          "MAKE_API_KEY": "<your-api-key>",
+          "MAKE_ZONE": "<your-zone>",
+          "MAKE_TEAM": "<your-team-id>"
+      },
+      "description": "Turn your Make scenarios into callable tools for AI assistants.",
+      "author": "MakeHQ",
+      "repository": "https://github.com/integromat/make-mcp-server"
+    },
+    "exa": {
+      "name": "exa-mcp-server",
+      "description": "API for executing powerful semantic and metadata search with Exa",
+      "git_url": "https://github.com/exa-labs/exa-mcp-server.git",
+      "command": "node",
+      "main_file": "dist/index.js",
+      "install_steps": [
+        "npm install",
+        "npm run build",
+        "npm link"
+      ],
+      "env": {
+        "EXA_API_KEY": "Your Exa API key for authentication"
+      },
+      "author": "Exa AI",
+      "installation_type": "git"
+    },
+    "gotoHuman": {
+      "name": "gotoHuman-mcp-server",
+      "description": "Human-in-the-loop platform - Allow AI agents and automations to send requests for approval to your gotoHuman inbox",
+      "git_url": "https://github.com/gotohuman/gotohuman-mcp-server.git",
+      "command": "node",
+      "main_file": "dist/index.js",
+      "install_steps": [
+        "npm install",
+        "npm run build"
+      ],
+      "env": {
+      "GOTOHUMAN_API_KEY": "your-api-key"
+      },
+      "author": "gotoHuman",
+      "installation_type": "git"
+    },
+    "edubase": {
+      "name": "edubase",
+      "description": "EduBase is an innovative, modular, online educational platform that makes learning more enjoyable, simpler and interactive, suitable for educational institutions or enterprises.",
+      "git_url": "https://github.com/EduBase/MCP.git",
+      "command": "node",
+      "main_file": "dist/index.js",
+      "install_steps": [
+        "npm install",
+        "npm run build"
+      ],
+      "env": {
+        "EDUBASE_API_URL": "https://domain.edubase.net/api",
+        "EDUBASE_API_APP": "your_integration_app_id",
+        "EDUBASE_API_KEY": "your_integration_secret_key"
+      },
+      "author": "EduBase",
+      "installation_type": "git"
+    },
+    "chroma": {
+      "name": "chroma",
+      "description": "Vector database server for semantic document search and metadata filtering, built on Chroma",
+      "git_url": "https://github.com/privetin/chroma.git",
+      "command": "uv",
+      "args": [
+        "--directory",
+        "{install_dir}",
+        "run",
+        "chroma"
+      ],
+      "install_steps": [
+        "uv venv",
+        "uv sync --dev --all-extras"
+      ],
+      "author": "privetin",
+      "installation_type": "git"
+    },
+    "perplexity-ask": {
+      "name": "perplexity-ask",
+      "description": "An MCP server that connects to Perplexity's Sonar API, enabling real-time web-wide research in conversational AI.",
+      "git_url": "https://github.com/ppl-ai/modelcontextprotocol.git",
+      "subdir": "modelcontextprotocol/perplexity-ask",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-perplexity-ask"
+      ],
+      "env": {
+        "PERPLEXITY_API_KEY": "YOUR_API_KEY_HERE"
+      },
+      "author": "perplexity",
+      "installation_type": "git"
+    },
+    "browserbase": {
+      "name": "browserbase",
+      "description": "Cloud browser automation",
+      "git_url": "https://github.com/browserbase/mcp-server-browserbase.git",
+      "subdir": "main/browserbase",
+      "command": "node",
+      "main_file": "dist/index.js",
+      "install_steps": ["npm install", "npm run build"],
+      "env": {
+        "BROWSERBASE_API_KEY": "<YOUR_BROWSERBASE_API_KEY>",
+        "BROWSERBASE_PROJECT_ID": "<YOUR_BROWSERBASE_PROJECT_ID>"
+      },
+      "installation_type": "git"
+    },
+    "stagehand": {
+      "name": "stagehand",
+      "package_name": "@browserbasehq/mcp-stagehand",
+      "description": "Automate browser interactions in the cloud (web navigation, data extraction, form filling, and more)",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@browserbasehq/mcp-stagehand"
+      ],
+      "env": {
+        "BROWSERBASE_API_KEY": "<YOUR_BROWSERBASE_API_KEY>",
+        "BROWSERBASE_PROJECT_ID": "<YOUR_BROWSERBASE_PROJECT_ID>",
+        "OPENAI_API_KEY": "<YOUR_OPENAI_API_KEY>"
+      },
+      "author": "Browserbase",
+      "installation_type": "npm"
+    },
+    "needle-mcp": {
+      "name": "needle_mcp",
+      "description": "Production-ready RAG out of the box to search and retrieve data from your own documents.",
+      "git_url": "https://github.com/needle-ai/needle-mcp",
+      "command": "uv",
+      "args": [
+        "{install_dir}",
+        "--directory",
+        "run",
+        "needle-mcp"
+      ],
+      "install_steps": [
+        "uv pip sync uv.lock",
+        "uv pip install -e ."    
+      ],
+      "env": {
+        "NEEDLE_API_KEY": "your_needle_api_key"
+      },
+      "installation_type": "git"
+    },
+    "langchain": {
+      "name": "langchain",
+      "description": "Access to LangChain tools, agents, retrievers and memory integrations.",
+      "package_name": "@langchain/mcp",
+      "command": "npx",
+      "args": ["-y", "@langchain/mcp"],
+      "author": "LangChain",
+      "installation_type": "npm"
+    },
+    "git-example": {
+      "name": "git-example",
+      "description": "Example server installed from a git repository",
+      "git_url": "https://github.com/example/mcp-server-example.git",
+      "command": "node",
+      "main_file": "index.js",
+      "install_command": "npm install",
+      "author": "Example Author",
+      "installation_type": "git"
+    },
+    "test-git-server": {
+      "name": "test-git-server",
+      "description": "Test server for git installation without package_name",
+      "git_url": "https://github.com/example/test-server.git",
+      "command": "uv",
+      "args": [
+        "run",
+        "server"
+      ],
+      "installation_type": "git"
+    },
+    "test-smithery-server": {
+      "name": "test-smithery-server",
+      "description": "Test server for smithery installation without package_name",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@smithery/cli",
+        "install",
+        "@test/server",
+        "--client",
+        "cursor"
+      ],
+      "installation_type": "smithery"
+    }
+  }
+} 
