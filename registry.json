@@ -461,6 +461,14 @@
       "author": "vectorize-io",
       "repository": "https://github.com/vectorize-io/vectorize-mcp-server"
     },
+    "apple-shortcuts": {
+      "name": "apple-shortcuts",
+      "package_name": "mcp-server-apple-shortcuts",
+      "command": "npx",
+      "description": "Vectorize MCP server for advanced retrieval, Private Deep Research, Anything-to-Markdown file extraction and text chunking.",
+      "author": "recursechat",
+      "repository": "A Model Context Protocol (MCP) server that lets AI assistants like Claude control Apple Shortcuts automations."
+    },
     "firecrawl": {
       "name": "firecrawl",
       "package_name": "mcp-server-firecrawl",
